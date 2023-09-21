@@ -1,0 +1,23 @@
+// Definition of CSS rules for pictures
+
+.xx-picture {
+
+  // Elements...
+  &__image {
+    border: lightgray solid thin;
+    padding: 3px 4px;
+  }
+  &__caption {
+    text-align: center;
+  }
+
+  // Modifiers...
+  &--large &__image {
+    width: $xx-image-large-width;
+  }
+
+  &--thumbnail &__image {
+    width: $xx-image-thumbnail-width;
+  }
+
+}
