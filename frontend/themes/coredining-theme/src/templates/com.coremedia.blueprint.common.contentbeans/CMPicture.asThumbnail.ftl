@@ -1,5 +1,7 @@
 <#-- @ftlvariable name="self" type="com.coremedia.blueprint.common.contentbeans.CMPicture" -->
-<div class="xx-picture xx-picture--thumbnail">
-  <img src="${cm.getLink(self.data!cm.UNDEFINED)}" title="${self.title!''}" width="100%" class="xx-picture__image"/>
+<div>
+  <img src="${cm.getLink(self.data!cm.UNDEFINED)}"
+       class="img-responsive img-border img-left"
+       title="${self.title!''}"
+       alt="${self.alt!self.title!''}" />
 </div>
-

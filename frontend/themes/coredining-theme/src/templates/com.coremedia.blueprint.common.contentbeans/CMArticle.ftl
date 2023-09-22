@@ -1,20 +1,26 @@
 <#-- @ftlvariable name="self" type="com.coremedia.blueprint.common.contentbeans.CMArticle" -->
+<div class="box col-lg-12">
+  <hr>
+  <h2 class="intro-text text-center"><strong>${self.title!"No Title"}</strong></h2>
+  <hr>
 
-<hr>
-<h1>${self.title!"No Title"}</h1>
-<hr>
+  <div>
+    <@cm.include self=self.picture!cm.UNDEFINED />
+  </div>
 
-<@cm.include self=self.picture!cm.UNDEFINED />
+  <hr>
 
-<div>
-    <@cm.include self=self.detailText />
+  <div>
+    <@cm.include self=self.detailText!cm.UNDEFINED />
+  </div>
+
+  <div>
+    <#list self.related![]>
+      <hr>
+      <h3>Related</h3>
+      <#items as related>
+        <@cm.include self=related view="asTeaser" />
+      </#items>
+    </#list>
+    </div>
 </div>
-
-<#list self.related![]>
-  <h2>
-    Related
-  </h2>
-  <#items as related>
-      <@cm.include self=related!cm.UNDEFINED view="asTeaser"/>
-  </#items>
-</#list>

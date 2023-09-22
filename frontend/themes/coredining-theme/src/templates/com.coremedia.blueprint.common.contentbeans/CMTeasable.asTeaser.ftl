@@ -1,25 +1,23 @@
 <#-- @ftlvariable name="self" type="com.coremedia.blueprint.common.contentbeans.CMTeasable" -->
 <#import "*/node_modules/@coremedia/brick-utils/src/freemarkerLibs/utils.ftl" as utils />
 
-<#assign targetLink=cm.getLink(self.target)/>
-<div class="xx-teaser xx-teaser--block">
-  <h3 class="xx-teaser__title">
-      <@utils.optionalLink href=targetLink>
-          ${self.teaserTitle!self.title}
-      </@utils.optionalLink>
-  </h3>
-  <#if self.picture?has_content>
-  <div class="xx-teaser__picture">
-      <@utils.optionalLink href=targetLink>
-          <@cm.include self=self.picture view="asThumbnail"/>
-      </@utils.optionalLink>
-  </div>
-  </#if>
-  <#if self.teaserText?has_content>
+<#assign targetLink=cm.getLink(self.target!cm.UNDEFINED) />
+<div class="box col-lg-12 clearfix">
 
-    <#assign truncatedTeaserText=bp.truncateText(self.teaserText, 140)/>
-    <div  class="xx-teaser__text">
-      <@utils.renderWithLineBreaks text=truncatedTeaserText/>
-    </div>
-  </#if>
+  <div class="col-sm-3">
+    <@utils.optionalLink href=targetLink>
+      <@cm.include self=self.picture!cm.UNDEFINED view="asThumbnail" />
+    </@utils.optionalLink>
+  </div>
+  <div class="col-sm-9">
+    <hr>
+    <h3 class="intro-text text-center">
+      <@utils.optionalLink href=targetLink>
+        <strong>${self.teaserTitle!self.title!'No title'}</strong>
+      </@utils.optionalLink>
+    </h3>
+    <hr>
+    <#assign truncatedTeaserText=bp.truncateText(self.teaserText!"", bp.setting(cmpage, "teaser.max.length", 140)) />
+    <@utils.renderWithLineBreaks text=truncatedTeaserText />
+  </div>
 </div>
