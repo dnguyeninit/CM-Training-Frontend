@@ -13,8 +13,6 @@
       <@utils.optionalLink href=targetLink>
           <@cm.include self=self.picture view="asThumbnail"/>
       </@utils.optionalLink>
-    <!-- TODO: (3) render the picture as thumbnail.
-	               wrap the picture with an optional hyperlink to the target -->
   </div>
   </#if>
   <#if self.teaserText?has_content>

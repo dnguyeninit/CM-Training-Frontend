@@ -15,8 +15,6 @@
     Related
   </h2>
   <#items as related>
-    <ul>
-       <a href="${cm.getLink(related)}">${related.title}</a>
-    </ul>
+      <@cm.include self=related!cm.UNDEFINED view="asTeaser"/>
   </#items>
 </#list>
