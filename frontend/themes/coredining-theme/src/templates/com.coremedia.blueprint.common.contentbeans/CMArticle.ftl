@@ -4,6 +4,10 @@
   <h2 class="intro-text text-center"><strong>${self.title!"No Title"}</strong></h2>
   <hr>
 
+  <p class="text-center">
+      <@cm.include self=cmpage.navigation view="asBreadcrumb" />
+  </p>
+
   <div>
     <@cm.include self=self.picture!cm.UNDEFINED />
   </div>
