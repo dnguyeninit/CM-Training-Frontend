@@ -3,12 +3,17 @@
 
 <div class="${self.cssClassName!''}">
   <#list self.rows![] as row>
+
     <#assign isSinglePlacementRow = row.placements?size==1/>
     <#assign firstPlacement = row.placements?first/>
+
+    <#-- if and elseif is skipped if the row isn't a header or footer -->
     <#if isSinglePlacementRow && firstPlacement.name=="header">
       <@cm.include self=firstPlacement view="asHeader"/>
+
     <#elseif isSinglePlacementRow && firstPlacement.name="footer">
       <@cm.include self=firstPlacement view="asFooter"/>
+
     <#else>
       <div class="container">
         <div class="row">
