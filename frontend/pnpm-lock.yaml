@@ -698,6 +698,7 @@ importers:
   themes/coredining-theme:
     specifiers:
       '@coremedia-training/brick-bootstrap': ^1.0.0
+      '@coremedia/brick-media': ^1.0.0
       '@coremedia/brick-preview': ^1.0.0
       '@coremedia/brick-utils': ^1.0.0
       '@coremedia/cm-cli': workspace:*
@@ -706,6 +707,7 @@ importers:
       webpack: ^4.46.0
     dependencies:
       '@coremedia-training/brick-bootstrap': link:../../bricks/training-bootstrap
+      '@coremedia/brick-media': link:../../lib/bricks/media
       '@coremedia/brick-preview': link:../../lib/bricks/preview
       '@coremedia/brick-utils': link:../../lib/bricks/utils
       '@coremedia/cm-cli': link:../../lib/tools/cm-cli

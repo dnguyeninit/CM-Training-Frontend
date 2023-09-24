@@ -4,6 +4,7 @@
 
   // Elements...
   &__image {
+    @include stretch-absolute();
     border: lightgray solid thin;
     padding: 3px 4px;
   }
@@ -11,13 +12,14 @@
     text-align: center;
   }
 
+
   // Modifiers...
-  &--large &__image {
-    width: $xx-image-large-width;
+  &--large {
+    @include aspect-ratio-box(16, 9);
   }
 
-  &--thumbnail &__image {
-    width: $xx-image-thumbnail-width;
+  &--thumbnail {
+    @include aspect-ratio-box(1, 1);
   }
 
 }
