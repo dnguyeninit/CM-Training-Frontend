@@ -4,6 +4,7 @@
 <#assign paramsFromContext = bp.setting(cmpage.navigation, "carousel", {}) />
 <#assign defaultParams = {"itemsView" : "asTeaser", "slickConfig" : {} } />
 
+<#-- Use generic settings first, go up to more specific settings -->
 <#assign carouselParams = defaultParams + paramsFromContext + paramsFromSelf />
 
 <@cm.include self=self view="asCarousel" params=carouselParams/>

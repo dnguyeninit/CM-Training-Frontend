@@ -9,7 +9,8 @@
   </p>
 
   <div>
-    <@cm.include self=self.picture!cm.UNDEFINED view="asLarge" />
+<#--    <@cm.include self=self.picture!cm.UNDEFINED view="asLarge" />-->
+    <@cm.include self=self view="_pictures"/>
   </div>
 
   <hr>
