@@ -7,12 +7,9 @@
     <#assign isSinglePlacementRow = row.placements?size==1/>
     <#assign firstPlacement = row.placements?first/>
 
-    <#-- if and elseif is skipped if the row isn't a header or footer -->
-    <#if isSinglePlacementRow && firstPlacement.name=="header">
-      <@cm.include self=firstPlacement view="asHeader"/>
-
-    <#elseif isSinglePlacementRow && firstPlacement.name="footer">
-      <@cm.include self=firstPlacement view="asFooter"/>
+    <#if isSinglePlacementRow && firstPlacement.additionalProperties['specialView']?has_content>
+      <@cm.include self=firstPlacement
+        view=firstPlacement.additionalProperties['specialView'] />
 
     <#else>
       <div class="container">
@@ -23,9 +20,13 @@
               <#-- A page is considered to be a detail view if the main contend rendered on the page is not a navigation node. -->
               <#if placement.name=="main" && cmpage.detailView>
                   <@cm.include self=cmpage.content/>
-                <#else>
-                  <#-- if above is false, then just include the content items under the current placement as a teaser -->
-                  <@cm.include self=placement view="asTeaser"/>
+              <#elseif placement.additionalProperties['specialView']?has_content>
+                <#-- Special Treatment -->
+                <@cm.include self=placement
+                view=placement.additionalProperties['specialView'] />
+              <#else>
+                <#-- if above is false, then just include the content items under the current placement as a teaser -->
+                <@cm.include self=placement view="asTeaser"/>
               </#if>
             </div>
           </#list>
