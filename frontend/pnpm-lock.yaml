@@ -700,6 +700,7 @@ importers:
       '@coremedia-training/brick-bootstrap': ^1.0.0
       '@coremedia/brick-media': ^1.0.0
       '@coremedia/brick-preview': ^1.0.0
+      '@coremedia/brick-slick-carousel': ^1.0.0
       '@coremedia/brick-utils': ^1.0.0
       '@coremedia/cm-cli': workspace:*
       '@coremedia/theme-utils': workspace:*
@@ -709,6 +710,7 @@ importers:
       '@coremedia-training/brick-bootstrap': link:../../bricks/training-bootstrap
       '@coremedia/brick-media': link:../../lib/bricks/media
       '@coremedia/brick-preview': link:../../lib/bricks/preview
+      '@coremedia/brick-slick-carousel': link:../../lib/bricks/slick-carousel
       '@coremedia/brick-utils': link:../../lib/bricks/utils
       '@coremedia/cm-cli': link:../../lib/tools/cm-cli
       '@coremedia/theme-utils': link:../../lib/tools/theme-utils
