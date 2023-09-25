@@ -20,12 +20,6 @@
   </div>
 
   <div>
-    <#list self.related![]>
-      <hr>
-      <h3>Related</h3>
-      <#items as related>
-        <@cm.include self=related view="asTeaser" />
-      </#items>
-    </#list>
-    </div>
+    <@cm.include self=self view="_related" />
+  </div>
 </div>
